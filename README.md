@@ -1,6 +1,10 @@
 # 🌾 AgroRAG
 
 AI-powered Agriculture Advisory System using Retrieval-Augmented Generation (RAG).
+## 📸 Screenshots
+
+![AgroRAG - PDF Mode](screenshot.png)
+![AgroRAG - General Mode](screenshot-general.png)
 
 ## 🚀 Features
 
