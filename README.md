@@ -31,7 +31,29 @@ Without PDF:
 
 Question → Llama 3.2 → Answer
 
+## ⚙️ Setup
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/Pavan10328/AgroRAG.git
+cd AgroRAG
+```
+
+2. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Install [Ollama](https://ollama.com) and pull the model
+
+```bash
+ollama pull llama3.2
+```
+
 ## ▶️ Run the Project
 
 ```bash
-python -m streamlit run app.py  
+python -m streamlit run app.py
+```
