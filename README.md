@@ -1,20 +1,31 @@
 # 🌾 AgroRAG
 
 AI-powered Agriculture Advisory System using Retrieval-Augmented Generation (RAG).
+
+AgroRAG is a Streamlit-based application that provides agriculture-related answers using general AI knowledge or information retrieved from uploaded agriculture PDF documents.
+
+## 🚀 Live Demo
+
+[Open AgroRAG Live Demo](https://agrorag-grzdftdgbasqktyhqpf2sb.streamlit.app/)
+
 ## 📸 Screenshots
 
 ![AgroRAG - PDF Mode](screenshot.png)
+
 ![AgroRAG - General Mode](screenshot-general.png)
 
 ## 🚀 Features
 
 - 📄 Upload agriculture PDF documents
-- 🔍 Extract and split document text
-- 🧠 Generate semantic embeddings
-- 🗂️ FAISS vector database for similarity search
-- 🤖 Llama 3.2 local LLM using Ollama
-- 🌱 Agriculture question answering
-- 💬 Works with or without PDF documents
+- 🔍 Extract and split document text into chunks
+- 🧠 Generate semantic embeddings using Sentence Transformers
+- 🗂️ Store and search embeddings using FAISS
+- 🔎 Retrieve relevant information from uploaded documents
+- 🤖 Generate answers using a Groq-hosted LLM
+- 🌱 Agriculture-focused question answering
+- 💬 General knowledge mode without a PDF
+- 🔄 RAG mode when a PDF is uploaded
+- 🌐 Deployed on Streamlit Cloud
 
 ## 🛠️ Technologies Used
 
@@ -23,41 +34,43 @@ AI-powered Agriculture Advisory System using Retrieval-Augmented Generation (RAG
 - LangChain
 - Sentence Transformers
 - FAISS
-- Ollama
-- Llama 3.2
+- Groq API
+- Llama-based LLM
 - PyPDF
+- NumPy
 
 ## 🔄 Architecture
 
-PDF → Text Extraction → Chunking → Embeddings → FAISS → Retrieval → Llama 3.2 → Answer
+### 📄 RAG Mode – With PDF
 
-Without PDF:
+PDF  
+↓  
+Text Extraction  
+↓  
+Text Chunking  
+↓  
+Sentence Transformer Embeddings  
+↓  
+FAISS Vector Search  
+↓  
+Relevant Context Retrieval  
+↓  
+Groq LLM  
+↓  
+Agriculture Answer
 
-Question → Llama 3.2 → Answer
+### 🤖 General Knowledge Mode – Without PDF
+
+User Question  
+↓  
+Groq LLM  
+↓  
+Agriculture Answer
 
 ## ⚙️ Setup
 
-1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/Pavan10328/AgroRAG.git
 cd AgroRAG
-```
-
-2. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-3. Install [Ollama](https://ollama.com) and pull the model
-
-```bash
-ollama pull llama3.2
-```
-
-## ▶️ Run the Project
-
-```bash
-python -m streamlit run app.py
-```
